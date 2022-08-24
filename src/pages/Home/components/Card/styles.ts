@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.li`
   background: ${({ theme }) => theme.colors.card};
   border-radius: 6px 36px;
+  border-style: solid;
 
   display: flex;
   flex-direction: column;
@@ -36,6 +37,7 @@ export const Button = styled.button`
 
   &:hover {
     background: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.text};
     transition: background-color 0.5s;
   }
 `

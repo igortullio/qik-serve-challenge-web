@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 100%;
       background-image: url(${hamburguer});
-      opacity: 0.1;
+      opacity: 0.2;
     }
 
     * {

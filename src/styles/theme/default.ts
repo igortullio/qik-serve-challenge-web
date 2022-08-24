@@ -1,6 +1,6 @@
 export const defaultTheme = {
   colors: {
-    card: '#F0E68C	',
+    card: '#FFFFE0	',
     text: '#FF4500',
     background: '#FFFFE0',
     hover: '#FF450055'
