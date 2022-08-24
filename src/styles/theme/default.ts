@@ -1,9 +1,9 @@
 export const defaultTheme = {
   colors: {
-    card: '#3294F8',
-    text: '#E7EDF4',
-    background: '#071422',
-    hover: '#C4D4E3',
+    card: '#F0E68C	',
+    text: '#FF4500',
+    background: '#FFFFE0',
+    hover: '#FF450055'
   },
   font: {
     family: 'Silkscreen',

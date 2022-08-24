@@ -19,22 +19,23 @@ export const Name = styled.h2`
 `
 
 export const Price = styled.h4`
-  font-family: 'DynaPuff';
   font-weight: ${({ theme }) => theme.font.weights.regular};
+  font-size: ${({ theme }) => theme.font.sizes[6]};
 `
 
 export const Button = styled.button`
   width: 100%;
 
   background: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.background};
   border-radius: 6px 36px;
 
   cursor: pointer;
   border: none;
   text-transform: uppercase;
 
-
   &:hover {
     background: ${({ theme }) => theme.colors.hover};
+    transition: background-color 0.5s;
   }
 `

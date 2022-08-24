@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import hamburguer from '../assets/icons-hamburger.png'
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -13,9 +15,28 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    height: 100vh;
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(${hamburguer});
+      opacity: 0.1;
+    }
+
+    * {
+      position: relative;
+    }
   }
 
   body, input, textarea, button, h1, h2, h3 {
