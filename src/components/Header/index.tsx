@@ -6,8 +6,10 @@ import { CartContext } from "../../contexts/CartContext";
 import * as S from "./styles";
 
 export function Header() {
-  const { items, allItems } = useContext(CartContext)
+  const { items } = useContext(CartContext)
   const navigate = useNavigate()
+
+  const allItems = items.reduce((acc, item) => acc + item.quantity, 0)
 
   return (
     <S.Wrapper>

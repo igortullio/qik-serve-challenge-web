@@ -2,13 +2,13 @@ import { createContext, ReactNode, useState } from 'react'
 
 export interface ItemProps {
   id: string
+  name: string
   quantity: number
 }
 
 interface CartContextProps {
   items: ItemProps[]
-  allItems: number
-  addItem: (id: string) => void
+  addItem: (item: ItemProps) => void
   removeItem: (id: string) => void
 }
 
@@ -20,21 +20,19 @@ interface CartContextProviderProps {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [items, setItems] = useState<ItemProps[]>([])
-  const [allItems, setAllItems] = useState(0)
 
-  function addItem(id: string) {
-    setAllItems(state => state + 1)
+  function addItem(item: ItemProps) {
     setItems((state) => {
       let itemExistsInCart = false
 
       state.forEach((savedItem) => {
-        if (savedItem.id === id) {
+        if (savedItem.id === item.id) {
           savedItem.quantity = savedItem.quantity + 1
           itemExistsInCart = true
         }
       })
 
-      return itemExistsInCart ? state : [...state, { id, quantity: 1 }]
+      return itemExistsInCart ? [...state] : [...state, { ...item }]
     })
   }
 
@@ -43,7 +41,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }
 
   return (
-    <CartContext.Provider value={{ items, allItems, addItem, removeItem }}>
+    <CartContext.Provider value={{ items, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   )
